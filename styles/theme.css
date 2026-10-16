@@ -42,3 +42,125 @@ footer { background: var(--brand-cream); }
 form { background: #FFFDF5; }
 @media(max-width:850px){ nav { background: var(--brand-cream); } }
 @media(max-width:640px){ .hero-wash { background: radial-gradient(ellipse at 50% 45%,#FFFAE7F2 0%,#FFFAE7B8 35%,#FFFAE700 78%); } }
+/* Full-width navy video section */
+.section.home-video {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(32px, 6vw, 88px);
+
+  width: 100%;
+  max-width: none;
+  margin: 0;
+
+  padding-block: clamp(48px, 6vw, 84px);
+  padding-inline: max(6%, calc((100% - 1268px) / 2));
+
+  background: #172547;
+  color: #fffaf0;
+
+  border-top: 0;
+  border-bottom: 1px solid #52617d;
+  border-radius: 0;
+}
+
+.section.home-video > div {
+  min-width: 0;
+}
+
+/* Readable text against navy */
+.section.home-video .eyebrow {
+  display: block;
+  margin-bottom: 20px;
+  color: #f5d575;
+}
+
+.section.home-video h2,
+.section.home-video h2 em {
+  color: #fffaf0;
+}
+
+.section.home-video h2 {
+  margin: 0;
+  font-size: clamp(30px, 3.2vw, 44px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.section.home-video p {
+  margin: 22px 0 26px;
+  color: #d6deed;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.section.home-video .textlink {
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 7px;
+
+  color: #fffaf0;
+  border-bottom: 1px solid #8996af;
+  text-decoration: none;
+}
+
+.section.home-video .textlink:hover {
+  color: #f5d575;
+  border-bottom-color: #f5d575;
+}
+
+.section.home-video .textlink:focus-visible {
+  outline: 2px solid #f5d575;
+  outline-offset: 6px;
+}
+
+/* Video illustration */
+.section.home-video .video-sketch {
+  position: relative;
+  display: grid;
+  place-items: center;
+
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+
+  background: #243658;
+  border-radius: 24px;
+}
+
+.section.home-video .video-sketch > span {
+  display: grid;
+  place-items: center;
+
+  width: clamp(64px, 7vw, 88px);
+  height: clamp(64px, 7vw, 88px);
+  border-radius: 50%;
+
+  background: #fff4d2;
+  color: #172547;
+  font-size: 25px;
+}
+
+.section.home-video .draw-border rect {
+  fill: none;
+  stroke: #f5d575;
+}
+
+@media (max-width: 700px) {
+  .section.home-video {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    padding: 44px 22px;
+  }
+
+  .section.home-video .video-sketch {
+    border-radius: 20px;
+  }
+
+  .section.home-video p {
+    font-size: 15px;
+  }
+}

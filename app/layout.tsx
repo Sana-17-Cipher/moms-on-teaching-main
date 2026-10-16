@@ -7,6 +7,7 @@ import '../styles/theme.css';
 import "./globals.css";
 import "../styles/theme.css";
 import "../styles/navigation.css";
+import "../styles/hero-motion.css";
 export const metadata: Metadata = { metadataBase: new URL('https://momsonteaching.com'), title: { default: 'Moms on Teaching | One-to-One Online Tuition in Kerala & GCC', template: '%s | Moms on Teaching' }, description: 'Patient, personalised online tuition for KG to Class 12. Explore CBSE, ICSE, IGCSE and Kerala State syllabus support with caring Teacher-Moms.', openGraph: { type: 'website', siteName: 'Moms on Teaching', images: ['/images/hero2.png'] } };
 export default function Layout({ children }: {
     children: React.ReactNode;

@@ -1,0 +1,475 @@
+.section {
+  padding: clamp(56px, 7vw, 100px) 24px;
+  background: var(--brand-cream, #fffae7);
+  color: #172547;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1160px;
+  margin-inline: auto;
+}
+
+.heading {
+  max-width: 760px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 16px;
+  color: #52617d;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0.16em;
+}
+
+.heading h2 {
+  margin: 0;
+  color: #172547;
+  font-size: clamp(29px, 3.2vw, 44px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.heading > p {
+  margin: 16px 0 0;
+  color: #536079;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* One expanded card and two narrow cards */
+.cards {
+  display: flex;
+  gap: 16px;
+}
+
+.card {
+  position: relative;
+  isolation: isolate;
+  flex: 1 1 0%;
+  min-width: 100px;
+  height: 350px;
+  overflow: hidden;
+
+  background: #f3eddc;
+  border: 1px solid #ded6be;
+  border-radius: 24px;
+
+  transition:
+    flex-grow 550ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 300ms ease,
+    border-color 300ms ease;
+}
+
+.card.active {
+  flex-grow: 4;
+  background: #172547;
+  border-color: #172547;
+}
+
+.trigger {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  width: 100%;
+  padding: 24px;
+  border: 0;
+  background: transparent;
+  color: #172547;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.number {
+  display: grid;
+  place-items: center;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+
+  border: 1px solid #cfc5a8;
+  border-radius: 50%;
+  font-size: 15px;
+  transition:
+    background-color 250ms ease,
+    border-color 250ms ease,
+    color 250ms ease;
+}
+
+.active .number {
+  color: #172547;
+  background: #f5d575;
+  border-color: #f5d575;
+}
+
+.triggerLabel,
+.indicator {
+  display: none;
+}
+
+.active .triggerLabel {
+  display: block;
+  color: #f5e9c4;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+/* Content slides into the expanded card */
+.panel {
+  position: absolute;
+  z-index: 1;
+  inset: 112px 28px auto;
+
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(24px);
+  pointer-events: none;
+
+  transition:
+    opacity 180ms ease,
+    transform 350ms ease,
+    visibility 180ms;
+}
+
+.active .panel {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+
+  transition:
+    opacity 350ms ease 120ms,
+    transform 450ms ease 80ms,
+    visibility 0s;
+}
+
+.panel h3 {
+  max-width: 440px;
+  margin: 0 0 16px;
+  color: #fffaf0;
+  font-size: clamp(25px, 2.7vw, 36px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.panel p {
+  max-width: 450px;
+  margin: 0;
+  color: #dce2ed;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.watermark {
+  position: absolute;
+  z-index: 0;
+  right: 14px;
+  bottom: -24px;
+
+  color: #172547;
+  opacity: 0.06;
+  font-size: 160px;
+  font-weight: 600;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.active .watermark {
+  color: #ffffff;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 22px;
+}
+
+.counter {
+  color: #536079;
+  font-size: 13px;
+}
+
+.arrows {
+  display: flex;
+  gap: 10px;
+}
+
+.arrow {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+
+  border: 1px solid #d5ccb1;
+  border-radius: 50%;
+  background: transparent;
+  color: #172547;
+  cursor: pointer;
+
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.arrow svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.arrow:active {
+  transform: scale(0.94);
+}
+
+.arrow:focus-visible,
+.trigger:focus-visible {
+  outline: 3px solid #a87716;
+  outline-offset: -4px;
+}
+
+@media (hover: hover) {
+  .arrow:hover {
+    background: #172547;
+    color: #fffaf0;
+  }
+}
+
+/* Mobile: expand vertically so the text stays readable */
+@media (max-width: 760px) {
+  .section {
+    padding: 56px 20px;
+  }
+
+  .heading {
+    margin-bottom: 28px;
+  }
+
+  .cards {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .card,
+  .card.active {
+    flex: none;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .trigger {
+    padding: 18px 20px;
+  }
+
+  .number {
+    flex-basis: 42px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .triggerLabel,
+  .active .triggerLabel {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .indicator {
+    display: block;
+    margin-left: auto;
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  .active .indicator {
+    color: #fffaf0;
+  }
+
+  .panel {
+    position: relative;
+    inset: auto;
+    display: grid;
+    grid-template-rows: 0fr;
+
+    padding: 0 20px;
+    transform: none;
+
+    transition:
+      grid-template-rows 400ms ease,
+      opacity 250ms ease,
+      visibility 400ms;
+  }
+
+  .active .panel {
+    grid-template-rows: 1fr;
+    transform: none;
+
+    transition:
+      grid-template-rows 400ms ease,
+      opacity 300ms ease 80ms,
+      visibility 0s;
+  }
+
+  .panelInner {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .panel h3 {
+    padding-top: 6px;
+    font-size: 27px;
+  }
+
+  .panel p {
+    padding-bottom: 28px;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .watermark {
+    font-size: 120px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .panel,
+  .active .panel,
+  .number,
+  .arrow {
+    transition: none;
+  }
+
+  .panel,
+  .active .panel {
+    transform: none;
+  }
+}
+/* Give the section breathing room */
+.section {
+  padding: clamp(40px, 6vw, 80px) clamp(16px, 4vw, 56px);
+  background: var(--brand-cream, #fffae7);
+}
+
+/* A distinct panel around the heading and cards */
+.section .inner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1160px;
+  margin-inline: auto;
+  padding: clamp(24px, 4vw, 52px);
+
+  background: #f5efdd;
+  border: 1px solid #e5dcc2;
+  border-radius: clamp(24px, 3vw, 40px);
+}
+
+/* Reset shared header styles affecting this heading */
+.section .heading {
+  position: static;
+  inset: auto;
+  display: block;
+  box-sizing: border-box;
+
+  width: 100%;
+  max-width: 740px;
+  min-height: 0;
+  height: auto;
+  margin: 0 auto 36px;
+  padding: 0;
+
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  transform: none;
+  text-align: center;
+}
+
+.section .heading::before,
+.section .heading::after {
+  display: none;
+}
+
+.section .heading .eyebrow {
+  display: block;
+  margin: 0 0 14px;
+  font-size: 11px;
+  line-height: 1.7;
+  letter-spacing: 0.14em;
+}
+
+.section .heading h2 {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0;
+
+  color: #172547;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.section .heading > p {
+  max-width: 480px;
+  margin: 14px auto 0;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Cream closed cards against the slightly darker panel */
+.section .card {
+  background: #fffae7;
+  border-color: #ded5bb;
+}
+
+.section .card.active {
+  background: #172547;
+  border-color: #172547;
+}
+
+.section .controls {
+  margin-top: 20px;
+}
+
+@media (max-width: 760px) {
+  .section .inner {
+    padding: 28px 18px 20px;
+    border-radius: 26px;
+  }
+
+  .section .heading {
+    margin-bottom: 26px;
+  }
+
+  .section .heading h2 {
+    font-size: clamp(27px, 5.5vw, 36px);
+  }
+
+  .section .heading > p {
+    font-size: 14px;
+  }
+}

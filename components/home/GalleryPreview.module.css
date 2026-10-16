@@ -1,0 +1,154 @@
+.section {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: clamp(40px, 5vw, 72px) 6%;
+
+  background: var(--brand-cream, #fffae7);
+  border-top: 1px solid #dcd4bd;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 72px);
+
+  width: 100%;
+  max-width: 1268px;
+  margin-inline: auto;
+}
+
+.copy {
+  min-width: 0;
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 20px;
+  color: #52617d;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.7;
+  letter-spacing: 0.15em;
+}
+
+.copy h2 {
+  margin: 0;
+  color: #172547;
+  font-size: clamp(30px, 3.2vw, 44px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.copy p {
+  max-width: 510px;
+  margin: 22px 0 26px;
+  color: #536079;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0 7px;
+
+  color: #172547;
+  border-bottom: 1px solid #8e9ab0;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.link:focus-visible {
+  outline: 2px solid #172547;
+  outline-offset: 5px;
+}
+
+/* Standalone puzzle — no rectangular background */
+.puzzle {
+  position: relative;
+  justify-self: center;
+  width: min(100%, 420px);
+  aspect-ratio: 1;
+  transform: rotate(-4deg);
+  transition: transform 350ms ease;
+}
+
+.shape {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: #b8c3d7;
+}
+
+.puzzleText {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  color: #172547;
+  text-align: center;
+}
+
+.puzzleText > span {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(23px, 2.3vw, 32px);
+  line-height: 1.15;
+  font-weight: 400;
+}
+
+.puzzleText small {
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: 0.16em;
+}
+
+@media (hover: hover) {
+  .puzzle:hover {
+    transform: rotate(0deg);
+  }
+
+  .link:hover {
+    border-bottom-color: #172547;
+  }
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding: 44px 22px;
+  }
+
+  .inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .puzzle {
+    width: min(100%, 340px);
+  }
+
+  .copy p {
+    font-size: 15px;
+  }
+
+  .puzzleText > span {
+    font-size: clamp(22px, 6vw, 28px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .puzzle {
+    transition: none;
+  }
+}
+.section {
+  border-top: 1px solid #dcd4bd;
+  border-bottom: 1px solid #dcd4bd;
+}
