@@ -1,0 +1,560 @@
+/* =========================
+   FLOATING NAVBAR
+   ========================= */
+
+header.mot-header {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  width: calc(100% - 48px);
+  max-width: 1500px;
+  margin: 0;
+  padding: 12px 16px 12px 22px;
+
+  background: rgba(255, 250, 240, 0.97);
+  color: #172547;
+
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 12px 36px rgba(23, 37, 71, 0.12);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  box-sizing: border-box;
+}
+
+/* Reserve space beneath the fixed navbar. */
+body {
+  padding-top: 110px;
+}
+
+.mot-header .mot-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+
+  color: #172547;
+  text-decoration: none;
+}
+
+.mot-header .mot-brand img {
+  display: block;
+  width: 44px;
+  height: 44px;
+
+  object-fit: cover;
+  border-radius: 50%;
+  background: #f2f2f2;
+}
+
+.mot-header .mot-brand span {
+  color: #172547;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(22px, 1.8vw, 29px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.6px;
+  white-space: nowrap;
+}
+
+.mot-header .mot-navigation {
+  position: static;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
+
+  width: auto;
+  padding: 0;
+  margin: 0;
+
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.mot-header .mot-navigation > a {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 8px 0;
+  margin: 0;
+
+  color: #172547;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: color 180ms ease;
+}
+
+.mot-header .mot-navigation > a:hover {
+  color: #9a6500;
+}
+
+.mot-header .mot-navigation > .mot-demo-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 16px 22px;
+  border-radius: 999px;
+
+  background: #f2ac26;
+  color: #172547;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition:
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.mot-header .mot-navigation > .mot-demo-button:hover {
+  background: #e9a01b;
+  color: #172547;
+  box-shadow: 0 5px 16px rgba(242, 172, 38, 0.2);
+}
+
+.mot-header .mot-menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 42px;
+  height: 42px;
+  padding: 0;
+
+  color: #172547;
+  background: transparent;
+  border: 1px solid rgba(23, 37, 71, 0.2);
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+.mot-header .mot-menu-toggle svg {
+  display: block;
+  width: 23px;
+  height: 23px;
+}
+
+/* =========================
+   DARK-BLUE FOOTER
+   ========================= */
+
+footer.mot-footer {
+  width: 100%;
+  padding: 64px 4.5% 34px;
+  margin: 0;
+
+  background: #0e182d;
+  color: #c2cde2;
+
+  box-sizing: border-box;
+}
+
+.mot-footer .mot-footer-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.3fr)
+    minmax(0, 0.9fr)
+    minmax(0, 0.9fr)
+    minmax(0, 1fr)
+    minmax(0, 1.4fr);
+
+  gap: 40px;
+  max-width: 1740px;
+  margin: 0 auto;
+}
+
+.mot-footer .mot-footer-grid > div {
+  min-width: 0;
+}
+
+.mot-footer .mot-footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.mot-footer .mot-footer-brand img {
+  display: block;
+  flex-shrink: 0;
+
+  width: 60px;
+  height: 60px;
+
+  border-radius: 50%;
+  object-fit: cover;
+  background: #f2f2f2;
+}
+
+.mot-footer .mot-footer-brand > span {
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 29px;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.3px;
+}
+
+.mot-footer .mot-footer-about > p {
+  max-width: 290px;
+  margin: 28px 0 30px;
+
+  color: #c2cde2;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.mot-footer .mot-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+
+  margin: 0 0 0 -5px;
+}
+
+.mot-footer .mot-social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 38px;
+
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.mot-footer .mot-social-links svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+.mot-footer .mot-footer-column h2 {
+  margin: 0 0 27px;
+  padding: 0;
+
+  color: #ffffff;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+}
+
+.mot-footer .mot-footer-column > a {
+  display: block;
+  margin: 0 0 20px;
+  padding: 0;
+
+  color: #c2cde2;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.mot-footer .mot-footer-contact > a {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  margin-bottom: 20px;
+}
+
+.mot-footer .mot-footer-contact > a > span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.mot-footer .mot-contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 43px;
+  height: 43px;
+
+  background: #1c3257;
+  color: #70afff;
+  border-radius: 5px;
+}
+
+.mot-footer .mot-contact-icon svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+.mot-footer .mot-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  max-width: 1740px;
+  margin: 40px auto 0;
+  padding-top: 32px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+
+  color: #92a5c5;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.mot-footer .mot-footer-bottom > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 26px;
+}
+
+.mot-footer .mot-footer-bottom a {
+  color: #92a5c5;
+  text-decoration: none;
+}
+
+.mot-footer a:hover {
+  color: #f2ac26;
+}
+
+/* =========================
+   SMALL DESKTOPS
+   ========================= */
+
+@media (max-width: 1450px) {
+  .mot-header {
+    gap: 16px;
+  }
+
+  .mot-header .mot-brand span {
+    font-size: 24px;
+  }
+
+  .mot-header .mot-navigation {
+    gap: 13px;
+  }
+
+  .mot-header .mot-navigation > a {
+    font-size: 12px;
+  }
+
+  .mot-header .mot-navigation > .mot-demo-button {
+    padding: 15px 18px;
+    font-size: 12px;
+  }
+
+  .mot-footer .mot-footer-grid {
+    gap: 28px;
+  }
+
+  .mot-footer .mot-footer-column > a,
+  .mot-footer .mot-footer-about > p {
+    font-size: 14px;
+  }
+}
+
+/* =========================
+   MOBILE NAVIGATION
+   ========================= */
+
+@media (max-width: 1280px) {
+  .mot-header .mot-menu-toggle {
+    display: inline-flex;
+  }
+
+  .mot-header .mot-navigation {
+    display: none;
+    position: absolute;
+
+    top: calc(100% + 12px);
+    left: 0;
+    right: 0;
+
+    width: auto;
+    max-height: calc(100dvh - 130px);
+    overflow-y: auto;
+
+    padding: 16px;
+
+    background: #fffaf0;
+    border: 1px solid #e8dfcd;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(23, 37, 71, 0.15);
+  }
+
+  .mot-header .mot-navigation.is-open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+
+  .mot-header .mot-navigation > a {
+    display: flex;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+
+  .mot-header .mot-navigation > a:hover {
+    background: #f6efd9;
+  }
+
+  .mot-header .mot-navigation > .mot-demo-button {
+    margin-top: 8px;
+    padding: 15px 20px;
+    border-radius: 999px;
+    background: #f2ac26;
+    font-size: 14px;
+  }
+}
+
+/* =========================
+   TABLET FOOTER
+   ========================= */
+
+@media (max-width: 1000px) {
+  .mot-footer .mot-footer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 38px;
+  }
+
+  .mot-footer .mot-footer-about {
+    grid-column: span 2;
+  }
+
+  .mot-footer .mot-footer-about > p {
+    max-width: 420px;
+  }
+
+  .mot-footer .mot-footer-contact {
+    grid-column: span 2;
+  }
+
+  .mot-footer .mot-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* =========================
+   PHONES
+   ========================= */
+
+@media (max-width: 600px) {
+  body {
+    padding-top: 90px;
+  }
+
+  header.mot-header {
+    top: 10px;
+    width: calc(100% - 24px);
+    padding: 9px 12px;
+    gap: 10px;
+  }
+
+  .mot-header .mot-brand {
+    gap: 8px;
+  }
+
+  .mot-header .mot-brand img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .mot-header .mot-brand span {
+    font-size: 20px;
+  }
+
+  .mot-header .mot-menu-toggle {
+    width: 38px;
+    height: 38px;
+  }
+
+  footer.mot-footer {
+    padding: 44px 24px 28px;
+  }
+
+  .mot-footer .mot-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 34px 22px;
+  }
+
+  .mot-footer .mot-footer-about,
+  .mot-footer .mot-footer-contact {
+    grid-column: 1 / -1;
+  }
+
+  .mot-footer .mot-footer-brand > span {
+    font-size: 27px;
+  }
+
+  .mot-footer .mot-footer-about > p {
+    margin: 23px 0 18px;
+  }
+
+  .mot-footer .mot-footer-column h2 {
+    margin-bottom: 22px;
+    font-size: 17px;
+  }
+
+  .mot-footer .mot-footer-column > a {
+    margin-bottom: 17px;
+    font-size: 14px;
+  }
+
+  .mot-footer .mot-footer-bottom {
+    margin-top: 30px;
+    padding-top: 24px;
+    gap: 18px;
+    font-size: 12px;
+  }
+
+  .mot-footer .mot-footer-bottom > div {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .mot-header .mot-brand span {
+    font-size: 17px;
+  }
+
+  .mot-header .mot-brand img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mot-header *,
+  .mot-footer * {
+    transition: none;
+  }
+}

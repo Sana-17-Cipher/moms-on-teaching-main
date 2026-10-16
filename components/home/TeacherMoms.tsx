@@ -1,0 +1,5 @@
+import Link from 'next/link';
+import { Puzzle } from '../Puzzle';
+import { Programmes } from '../Programmes';
+import { FAQ } from '../FAQ';
+export function TeacherMoms() { return <section className="care section"><div className="carevisual"><Puzzle /><span className="careword">A little<br />patience.<br /><em>A big<br />difference.</em></span><span className="carestar">✦</span></div><div><span className="eyebrow">THE HEART BEHIND THE LESSONS</span><h2>Teachers by profession.<br /><em>Moms at heart.</em></h2><p>Knowledge matters. So does the way it’s shared. Our Teacher-Moms bring patient guidance and personal connection to every lesson.</p>{[['01', 'Space to be curious', 'No rushing past a question. We make time to explore what your child needs to understand.'], ['02', 'Support that adapts', 'Lessons respond to their strengths, learning gaps and schoolwork.'], ['03', 'A journey you’re part of', 'Progress conversations help parents stay connected to their child’s learning.']].map(([n, t, d]) => <div className="reason" key={n}><span>{n}</span><div><h3>{t}</h3><p>{d}</p></div></div>)}</div></section>; }

@@ -1,0 +1,44 @@
+/* Edit brand colours here. Sampled from the supplied reference swatches. */
+:root {
+  --brand-navy: #172547;
+  --brand-cream: #FFFAE7;
+  --brand-yellow: #F5C84C;
+  --ink: var(--brand-navy);
+  --accent: var(--brand-navy);
+  --cream: var(--brand-cream);
+  --muted: #52617E;
+  --line: #E5DFC9;
+}
+body { background: var(--brand-cream); }
+.topbar { background: var(--brand-navy); color: var(--brand-cream); }
+header { background: #FFFAE7F5; border-bottom-color: var(--line); }
+.button { background: var(--brand-navy); color: var(--brand-cream); border-color: var(--brand-navy); }
+.button:hover { background: #273C69; color: var(--brand-cream); }
+.hero.puzzle-hero { background: var(--brand-cream); }
+.puzzle-tile { fill: var(--brand-cream); stroke: #DDE0E7; }
+.puzzle-tile.is-active { fill: var(--brand-yellow); stroke: var(--brand-yellow); }
+.hero-wash { background: radial-gradient(ellipse at 50% 45%,#FFFAE7EB 0%,#FFFAE7A8 26%,#FFFAE700 57%); }
+.puzzle-hero h1 { background: none; color: var(--brand-navy); -webkit-text-fill-color: var(--brand-navy); }
+.puzzle-hero .hero-copy .hero-subtitle { color: var(--brand-navy); }
+.hero-pill { color: var(--brand-navy); background: #FFFDF4; border-color: var(--line); }
+.hero-description strong { color: var(--brand-navy); }
+.button.hero-demo { background: var(--brand-navy); color: var(--brand-cream); box-shadow: 0 6px 20px #17254712; }
+.button.hero-demo:hover { background: #273C69; }
+.hero-bottom-note { color: var(--brand-navy); background: #FFFDF4; border-color: var(--line); }
+.hero-lineart { color: #BBC3D3; }
+.hero-wave { fill: #F5EED8; }
+.puzzle-hero + .curricula { background: #F5EED8; }
+.program.card0,.program.card2 { background: #F8F1DA; }
+.program.card1 { background: #EEF0F5; }
+.carevisual,.gallerytile,.video-sketch,.channel-feature { background: #EEE8D6; color: var(--brand-navy); }
+.carevisual .puzzle,.gallerytile .puzzle { color: #B5BFD2; }
+.cta { background: var(--brand-navy); color: var(--brand-cream); }
+.cta h2 em,.cta .eyebrow,.cta p { color: var(--brand-cream); }
+.cta .button { background: var(--brand-cream); border-color: var(--brand-cream); color: var(--brand-navy); }
+.cta .button:hover { background: #F4E6B6; }
+.cta-star { color: #344569; }
+footer { background: var(--brand-cream); }
+.pagehero { background: #F5EED8; }
+form { background: #FFFDF5; }
+@media(max-width:850px){ nav { background: var(--brand-cream); } }
+@media(max-width:640px){ .hero-wash { background: radial-gradient(ellipse at 50% 45%,#FFFAE7F2 0%,#FFFAE7B8 35%,#FFFAE700 78%); } }
