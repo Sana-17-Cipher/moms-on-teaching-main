@@ -617,3 +617,15 @@
 .hero.puzzle-hero .hero-wave {
   display: none;
 }
+.mot-introduction__wave {
+  fill: #172547;
+}
+/* Straight transition from the white introduction to navy programmes */
+.mot-introduction__wave {
+  display: none;
+}
+
+/* Remove the extra space previously reserved for the wave */
+.mot-introduction {
+  padding-bottom: clamp(40px, 5vw, 72px);
+}

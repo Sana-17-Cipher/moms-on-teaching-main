@@ -1,7 +1,7 @@
 export const nav = [
   ["Home", "https://momsonteaching.com/en"],
   ["Gallery", "https://momsonteaching.com/en/gallery/mot-gallery"],
-  ["About Us", "https://momsonteaching.com/en/about-us"],
+['About Us', '/about/'],
   ["Contact Us", "https://momsonteaching.com/en/contact-en"],
   ["Student Registration", "https://momsonteaching.com/en/node/32"],
   ["Blogs", "https://momsonteaching.com/ml/insights-blogs-ml"],
